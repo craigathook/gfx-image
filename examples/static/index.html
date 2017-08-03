@@ -1,0 +1,52 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/306041/glfx.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+    <script src="../../build/gfx-image.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+  <body>
+    <div id="container">
+      <div class="gfx-animation">
+        <div class='car-container'>
+          <img class="big-image" src="./images/4kcars.jpg" />
+        </div>
+      </div>
+    </div>
+    <script>
+      var carImageElement = document.querySelector('.big-image');
+      var carImage = GFXImage.create(carImageElement, init);
+
+      carImage.zoomBlur.enabled = true;
+      carImage.brightnessContrast.enabled = true;
+      carImage.lensBlur.enabled = true;
+
+      carImage.zoomBlur.strength = 1;
+      carImage.zoomBlur.centerX = 760;
+      carImage.zoomBlur.centerY = 360;
+
+      carImage.brightnessContrast.brightness = 0.58;
+      carImage.brightnessContrast.contrast = 0.78;
+
+      carImage.lensBlur.radius = 0;
+      carImage.lensBlur.brightness = 1;
+      carImage.lensBlur.angle = 0.66841;
+
+      function init(){
+        TweenMax.set('.car-container', {transformOrigin: 'top left', rotate:0.01, scale: 4, x:-2580, y:-1325});
+        TweenMax.to('.car-container', 1.1, {scale: 1, x:-440, y:-230, ease:Power4.easeOut});
+        
+        TweenMax.to(carImage.brightnessContrast, 1.7, {brightness: 0, contrast:0});
+        TweenMax.to(carImage.zoomBlur, 1.2, {strength: 0, ease:Power2.easeOut });
+        TweenMax.to(carImage.lensBlur, 0.7, {delay:0.1, radius: 8});
+        TweenMax.to(carImage.lensBlur, 1, {delay:1, radius: 0, ease:Power2.easeInOut});
+      }
+
+    </script>
+  </body>
+</html>

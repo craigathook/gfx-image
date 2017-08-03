@@ -1,0 +1,10 @@
+.gfx-animation {
+  width:600px;
+  height:250px;
+  background: black;
+  overflow:hidden;
+}
+
+.big-image {
+  opacity: 0;
+}
