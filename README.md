@@ -31,7 +31,7 @@ Then, once the filter is enabled, you can set the filter's properties like this:
 
 # List of supported filter properties
 
-These properties are all derived from the GLFX library. Find examples and more detailed documentation on these filters here: 
+These properties are all derived from the GLFX library. Find examples and more detailed documentation on these filters here: http://evanw.github.io/glfx.js/demo/
 
 Example usage:
 
